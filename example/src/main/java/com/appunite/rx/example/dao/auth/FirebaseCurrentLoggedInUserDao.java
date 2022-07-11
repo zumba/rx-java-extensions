@@ -16,7 +16,7 @@
 
 package com.appunite.rx.example.dao.auth;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.appunite.rx.ResponseOrError;
 import com.appunite.rx.example.internal.Objects;
@@ -61,7 +61,7 @@ public class FirebaseCurrentLoggedInUserDao implements MyCurrentLoggedInUserDao 
             return Observable.create(new Observable.OnSubscribe<String>() {
                 @Override
                 public void call(final Subscriber<? super String> subscriber) {
-                    final Task<GetTokenResult> token = firebaseUser.getToken(forceRefresh);
+                    final Task<GetTokenResult> token = firebaseUser.getIdToken(forceRefresh);
                     final OnCompleteListener<GetTokenResult> listener = new OnCompleteListener<GetTokenResult>() {
                         @Override
                         public void onComplete(@NonNull Task<GetTokenResult> task) {

@@ -18,7 +18,7 @@ package com.appunite.rx.android.internal;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 

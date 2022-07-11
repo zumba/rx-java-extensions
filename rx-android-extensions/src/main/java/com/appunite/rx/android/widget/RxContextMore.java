@@ -18,7 +18,7 @@ package com.appunite.rx.android.widget;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.widget.Toast;
 
 import javax.annotation.Nonnull;

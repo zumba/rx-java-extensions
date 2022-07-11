@@ -16,7 +16,7 @@
 
 package com.appunite.rx.example.ui.internal;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
 }

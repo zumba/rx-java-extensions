@@ -16,8 +16,8 @@
 
 package com.appunite.rx.android.widget;
 
-import android.support.annotation.IdRes;
-import android.support.v7.widget.PopupMenu;
+import androidx.annotation.IdRes;
+import androidx.appcompat.widget.PopupMenu;
 import android.view.MenuItem;
 
 import com.appunite.rx.android.internal.MainThreadSubscription;

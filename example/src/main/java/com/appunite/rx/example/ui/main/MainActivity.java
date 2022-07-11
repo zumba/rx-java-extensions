@@ -17,11 +17,13 @@
 package com.appunite.rx.example.ui.main;
 
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,7 +85,7 @@ public class MainActivity extends BaseActivity {
             @Nonnull
             private final SerialSubscription subscription = new SerialSubscription();
             @Nonnull
-            private final Observable<Object> clickObservable;
+            private final Observable<Void> clickObservable;
 
             MainViewHolder(@Nonnull View itemView) {
                 super(itemView);
@@ -175,7 +177,7 @@ public class MainActivity extends BaseActivity {
                 menuClicks.filter(RxToolbarMore.filterMenuClick(R.id.main_activity_menu_logout))
                         .subscribe(presenter.clickLogoutObserver()),
                 presenter.loginVisibleObservable()
-                    .subscribe(setVisibility(toolbar.getMenu().findItem(R.id.main_activity_menu_login))),
+                        .subscribe(setVisibility(toolbar.getMenu().findItem(R.id.main_activity_menu_login))),
                 presenter.logoutVisibleObservable()
                         .subscribe(setVisibility(toolbar.getMenu().findItem(R.id.main_activity_menu_logout))),
                 presenter.titleObservable()
@@ -186,7 +188,7 @@ public class MainActivity extends BaseActivity {
                         .subscribe(RxView.visibility(checkNotNull(findViewById(R.id.main_activity_progress)), View.INVISIBLE)),
                 presenter.errorObservable()
                         .map(ErrorHelper.mapThrowableToStringError())
-                        .subscribe(RxTextView.text(checkNotNull((TextView)findViewById(R.id.main_activity_error)))),
+                        .subscribe(RxTextView.text(checkNotNull((TextView) findViewById(R.id.main_activity_error)))),
                 presenter.openDetailsObservable()
                         .subscribe(new Action1<MainPresenter.AdapterItem>() {
                             @Override
@@ -224,7 +226,12 @@ public class MainActivity extends BaseActivity {
                             public void call(Object o) {
                                 startActivity(AuthUI.getInstance()
                                         .createSignInIntentBuilder()
-                                        .setProviders(AuthUI.EMAIL_PROVIDER, AuthUI.GOOGLE_PROVIDER)
+                                        .setAvailableProviders(
+                                                Arrays.asList(
+                                                        new AuthUI.IdpConfig.EmailBuilder().build(),
+                                                        new AuthUI.IdpConfig.GoogleBuilder().build()
+                                                )
+                                        )
                                         .setTheme(R.style.LoginTheme)
                                         .build());
                             }

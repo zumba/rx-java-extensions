@@ -16,7 +16,7 @@
 
 package com.appunite.rx.android.widget;
 
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 
 import com.appunite.rx.android.internal.MainThreadSubscription;
 import com.appunite.rx.android.internal.Preconditions;

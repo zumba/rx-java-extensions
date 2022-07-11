@@ -18,3 +18,7 @@ allprojects {
         maven { url 'https://commondatastorage.googleapis.com/maven-repository/' }
     }
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -16,8 +16,8 @@
 
 package com.appunite.rx.example.ui.internal;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import javax.annotation.Nonnull;
 

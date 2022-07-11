@@ -16,7 +16,7 @@
 
 package com.appunite.rx.android;
 
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 
 import javax.annotation.Nonnull;
 

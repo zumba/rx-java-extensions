@@ -16,9 +16,9 @@
 
 package com.appunite.rx.android.widget;
 
-import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 

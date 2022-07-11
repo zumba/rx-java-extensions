@@ -10,24 +10,26 @@ dependencies {
     implementation project(':example-model')
 
     // Android
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:palette-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
     // Recycler view helpers
-    implementation 'com.github.jacek-marchwicki.recyclerview-changes-detector:universal-adapter-rx:1.0.0'
+    implementation 'com.github.jacek-marchwicki.recyclerview-changes-detector:universal-adapter:2.0.1'
+    implementation 'com.github.jacek-marchwicki.recyclerview-changes-detector:universal-adapter-rx:2.0.1'
 
     // Firebase
-    implementation 'com.firebaseui:firebase-ui-auth:0.6.0'
+    implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
 
-    implementation 'com.jakewharton.rxbinding:rxbinding:0.2.0'
-    implementation 'com.jakewharton.rxbinding:rxbinding-support-v4:0.2.0'
-    implementation 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.2.0'
-    implementation 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.2.0'
+    implementation "com.github.kazik117.RxBinding:rxbinding:migrate-androidx-SNAPSHOT"
+    implementation "com.github.kazik117.RxBinding:rxbinding-support-v4:migrate-androidx-SNAPSHOT"
+    implementation "com.github.kazik117.RxBinding:rxbinding-appcompat-v7:migrate-androidx-SNAPSHOT"
+    implementation "com.github.kazik117.RxBinding:rxbinding-recyclerview-v7:migrate-androidx-SNAPSHOT"
 }
 
 Properties props = new Properties()
@@ -94,8 +96,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
