@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
 }
 
-group='com.github.jacek-marchwicki.rx-java-extensions'
+group='com.github.jacek-marchwicki.rx-android-extensions'
 // When changing update README file
 version='1.0.4'
 
@@ -44,3 +44,5 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+apply from: "${rootDir}/gradle/mvn-helper.gradle"

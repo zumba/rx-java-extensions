@@ -24,20 +24,13 @@ import rx.subscriptions.Subscriptions;
 import android.os.Handler;
 import android.os.Looper;
 
-/**
- * @deprecated Use {@link MyAndroidSchedulers#handlerThread}. This type will not be part of the
- * public API in a future release.
- */
-@Deprecated
-public class MyHandlerThreadScheduler extends Scheduler {
+import com.appunite.rx.android.MyAndroidSchedulers;
+
+class MyHandlerThreadScheduler extends Scheduler {
 
     private final Handler handler;
 
-    /**
-     * @deprecated Use {@link MyAndroidSchedulers#handlerThread}.
-     */
-    @Deprecated
-    public MyHandlerThreadScheduler(Handler handler) {
+    MyHandlerThreadScheduler(Handler handler) {
         this.handler = handler;
     }
 

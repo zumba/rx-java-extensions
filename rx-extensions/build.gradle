@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'maven'
 
 group='com.github.jacek-marchwicki.rx-java-extensions'
 // When changing update README file
@@ -22,3 +21,5 @@ test {
     include '**/*Test.class'
     maxParallelForks 1
 }
+
+apply from: "${rootDir}/gradle/mvn-helper.gradle"

@@ -199,7 +199,7 @@ public class ResponseOrError<T> {
     }
 
     /**
-     * Convert {@link Observable} that can throw error to {@link Observable<ResponseOrError>}
+     * Convert {@link Observable} that can throw error to {@code rx.Observable<ResponseOrError>}
      *
      * If source Observable returns obj, result observable will return ResponseOrError.fromData(obj)
      * If source Observable throws err, result observable will return ResponseOrError.fromError(err)

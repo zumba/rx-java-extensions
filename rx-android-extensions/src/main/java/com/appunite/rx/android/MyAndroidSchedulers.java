@@ -32,6 +32,9 @@ public final class MyAndroidSchedulers {
 
     /**
      * {@link Scheduler} which uses the provided {@link Handler} to execute actions.
+     *
+     * @param handler Handler on which actions are run
+     * @return rx.Scheduler
      */
     public static Scheduler handlerThread(final Handler handler) {
         return new MyHandlerThreadScheduler(handler);
@@ -39,6 +42,8 @@ public final class MyAndroidSchedulers {
 
     /**
      * {@link Scheduler} which will execute actions on the Android UI thread.
+     *
+     * @return rx.Scheduler Main thread
      */
     public static Scheduler mainThread() {
         return MAIN_THREAD_SCHEDULER;
