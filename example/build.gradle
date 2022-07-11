@@ -1,30 +1,33 @@
-apply plugin: 'com.android.application'
+plugins {
+    id("com.android.application")
+    id("com.google.gms.google-services")
+}
 
 dependencies {
 
     // Projects
-    compile project(':rx-android-extensions')
-    compile project(':example-model')
+    implementation project(':rx-android-extensions')
+    implementation project(':example-model')
 
     // Android
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:design:24.2.1'
-    compile 'com.android.support:support-v4:24.2.1'
-    compile 'com.android.support:palette-v7:24.2.1'
-    compile 'com.android.support:recyclerview-v7:24.2.1'
-    compile 'com.android.support:cardview-v7:24.2.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:palette-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 
     // Recycler view helpers
-    compile 'com.github.jacek-marchwicki.recyclerview-changes-detector:universal-adapter-rx:1.0.0'
+    implementation 'com.github.jacek-marchwicki.recyclerview-changes-detector:universal-adapter-rx:1.0.0'
 
     // Firebase
-    compile 'com.firebaseui:firebase-ui-auth:0.6.0'
+    implementation 'com.firebaseui:firebase-ui-auth:0.6.0'
 
-    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.2.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.2.0'
-    compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.2.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding-support-v4:0.2.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.2.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.2.0'
 }
 
 Properties props = new Properties()
@@ -34,8 +37,7 @@ if (keystoreProperties.exists()) {
 }
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 28
 
     packagingOptions {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
@@ -47,12 +49,11 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 28
         versionCode 1
         versionName "0.0.1"
         applicationId "com.appunite.rx.example"
         multiDexEnabled = true
-        useJack false
         testHandleProfiling true
         testFunctionalTest true
     }
@@ -98,5 +99,3 @@ android {
     }
 
 }
-
-apply plugin: 'com.google.gms.google-services'
