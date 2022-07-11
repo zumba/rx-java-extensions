@@ -1,8 +1,9 @@
 apply plugin: 'java'
 
-group='com.github.jacek-marchwicki.rx-java-extensions'
+group=GROUP
 // When changing update README file
-version='1.0.4'
+version=VERSION
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

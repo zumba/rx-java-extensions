@@ -2,9 +2,9 @@ plugins {
     id("com.android.library")
 }
 
-group='com.github.jacek-marchwicki.rx-android-extensions'
+group=GROUP
 // When changing update README file
-version='1.0.4'
+version=VERSION
 
 dependencies {
     api project(":rx-extensions")
