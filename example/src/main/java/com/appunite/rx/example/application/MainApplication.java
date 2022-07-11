@@ -16,7 +16,7 @@
 
 package com.appunite.rx.example.application;
 
-import android.app.Application;
+import androidx.multidex.MultiDexApplication;
 
-public class MainApplication extends Application {
+public class MainApplication extends MultiDexApplication {
 }
